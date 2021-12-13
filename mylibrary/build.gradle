@@ -30,21 +30,21 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-
-    configurations.all {
-        resolutionStrategy {
-            // fail eagerly on version conflict (includes transitive dependencies)
-            // e.g. multiple different versions of the same dependency (group and name are equal)
-            failOnVersionConflict()
-
-            // prefer modules that are part of this build (multi-project or composite build) over external modules
-            preferProjectModules()
-
-            // force certain versions of dependencies (including transitive)
-            //  *append new forced modules:
-            force 'com.github.Double-Dude.TestJitPackGradleLibrary:mylibrary2:0.0.2'
-        }
-    }
+//
+//    configurations.all {
+//        resolutionStrategy {
+//            // fail eagerly on version conflict (includes transitive dependencies)
+//            // e.g. multiple different versions of the same dependency (group and name are equal)
+//            failOnVersionConflict()
+//
+//            // prefer modules that are part of this build (multi-project or composite build) over external modules
+//            preferProjectModules()
+//
+//            // force certain versions of dependencies (including transitive)
+//            //  *append new forced modules:
+//            force 'com.github.Double-Dude.TestJitPackGradleLibrary:mylibrary2:0.0.2'
+//        }
+//    }
 
 }
 
@@ -55,7 +55,11 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
 //    implementation(name:'mylibrary2-release', ext:'aar')
 //    implementation project(':mylibrary2')
-    implementation 'com.github.Double-Dude.TestJitPackGradleLibrary:mylibrary2:0.0.2'
+    implementation("com.github.Double-Dude.TestJitPackGradleLibrary:mylibrary2") {
+        version {
+            strictly("0.0.2")
+        }
+    }
 
 
 }
