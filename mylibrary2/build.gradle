@@ -43,7 +43,7 @@ publishing {
         mavenJava(MavenPublication) {
             groupId = 'com.rayq'
             artifactId = 'mylibrary2'
-            version = '0.1'
+            version = '0.1.8'
         }
     }
 }
