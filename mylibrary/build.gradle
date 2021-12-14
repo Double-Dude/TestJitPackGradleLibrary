@@ -67,8 +67,8 @@ dependencies {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId = 'foo'
-            artifactId = 'bar'
+            groupId = 'com.rayq'
+            artifactId = 'mylibrary'
             version = '0.1'
         }
     }

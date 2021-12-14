@@ -38,3 +38,12 @@ dependencies {
 
 }
 
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId = 'com.rayq'
+            artifactId = 'mylibrary2'
+            version = '0.1'
+        }
+    }
+}
