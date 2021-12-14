@@ -64,12 +64,13 @@ dependencies {
 
 
 }
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            groupId = 'com.rayq'
-            artifactId = 'mylibrary'
-            version = '0.1.8'
+project.afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+//                artifact androidSourcesJar // optional sources
+            }
         }
     }
 }
