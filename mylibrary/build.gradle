@@ -64,3 +64,12 @@ dependencies {
 
 
 }
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId = 'foo'
+            artifactId = 'bar'
+            version = '0.1'
+        }
+    }
+}
